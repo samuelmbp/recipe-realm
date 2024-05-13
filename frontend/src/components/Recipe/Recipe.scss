@@ -1,0 +1,10 @@
+@use "../../styles/variables" as *;
+
+.recipe {
+    margin: 0 auto;
+    padding: 10px;
+    color: $color-white;
+    border-radius: 5px;
+    height: 100%;
+    background-color: $primary-color;
+}
