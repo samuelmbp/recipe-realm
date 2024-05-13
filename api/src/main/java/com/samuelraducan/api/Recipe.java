@@ -1,23 +1,24 @@
 package com.samuelraducan.api;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Entity
+@Table(name = "recipes")
 public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String title;
     private String description;
-    private List<String> ingredients;
-    private List<String> instructions;
+
+    @Column(length = 1000)
+    private String ingredients;
+
+    @Column(length = 1000)
+    private String instructions;
     private String preparationTime;
     private String cookingTime;
     private String totalTime;
@@ -25,47 +26,18 @@ public class Recipe {
     private String difficultyLevel;
     private String cuisine;
     private String mealType;
-    private List<String> dietaryInformation;
+    private String dietaryInformation;
     private int calories;
-    private Map<String, String> nutritionalInformation;
+    private String nutritionalInformation;
     private String source;
-    private List<String> tags;
+    private String tags;
     private String image;
 
-    public Recipe() {}
-
-    public Recipe(Long id, String title, String description,
-                  List<String> ingredients, List<String> instructions,
-                  String preparationTime, String cookingTime, String totalTime,
-                  int servings, String difficultyLevel, String cuisine,
-                  String mealType, List<String> dietaryInformation, int calories,
-                  Map<String, String> nutritionalInformation, String source,
-                  List<String> tags, String image) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.ingredients = ingredients;
-        this.instructions = instructions;
-        this.preparationTime = preparationTime;
-        this.cookingTime = cookingTime;
-        this.totalTime = totalTime;
-        this.servings = servings;
-        this.difficultyLevel = difficultyLevel;
-        this.cuisine = cuisine;
-        this.mealType = mealType;
-        this.dietaryInformation = dietaryInformation;
-        this.calories = calories;
-        this.nutritionalInformation = nutritionalInformation;
-        this.source = source;
-        this.tags = tags;
-        this.image = image;
-    }
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -85,19 +57,19 @@ public class Recipe {
         this.description = description;
     }
 
-    public List<String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
-    public List<String> getInstructions() {
+    public String getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(List<String> instructions) {
+    public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
 
@@ -157,11 +129,11 @@ public class Recipe {
         this.mealType = mealType;
     }
 
-    public List<String> getDietaryInformation() {
+    public String getDietaryInformation() {
         return dietaryInformation;
     }
 
-    public void setDietaryInformation(List<String> dietaryInformation) {
+    public void setDietaryInformation(String dietaryInformation) {
         this.dietaryInformation = dietaryInformation;
     }
 
@@ -173,11 +145,11 @@ public class Recipe {
         this.calories = calories;
     }
 
-    public Map<String, String> getNutritionalInformation() {
+    public String getNutritionalInformation() {
         return nutritionalInformation;
     }
 
-    public void setNutritionalInformation(Map<String, String> nutritionalInformation) {
+    public void setNutritionalInformation(String nutritionalInformation) {
         this.nutritionalInformation = nutritionalInformation;
     }
 
@@ -189,11 +161,11 @@ public class Recipe {
         this.source = source;
     }
 
-    public List<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
