@@ -19,6 +19,7 @@ public class Recipe {
 
     @Column(length = 1000)
     private String instructions;
+
     private String preparationTime;
     private String cookingTime;
     private String totalTime;

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 public class RecipesService {
@@ -13,11 +13,13 @@ public class RecipesService {
     private RecipesRepository recipesRepository;
 
     public List<Recipe> getAllRecipes() {
-        List<Recipe> recipes = recipesRepository
-                .findAll()
-                .stream()
-                .collect(Collectors.toList());
-        System.out.println(recipes);
-        return recipes;
+        return recipesRepository.findAll();
+    }
+
+    public Recipe getRecipeById(long id) {
+        Optional<Recipe> recipe = recipesRepository.findById(id);
+        if (recipe.isEmpty()) throw new RecipeNotFoundException();
+
+        return recipe.get();
     }
 }
