@@ -14,9 +14,10 @@ public class RecipesController {
     @Autowired
     private RecipesService recipesService;
 
-    @GetMapping("/")
-    public ResponseEntity<String> helloWorld() {
-        return ResponseEntity.status(HttpStatus.OK).body("Hello, world.");
+    @PostMapping("/recipe")
+    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe) {
+        recipesService.addRecipe(recipe);
+        return ResponseEntity.status(HttpStatus.CREATED).body(recipe);
     }
 
     @GetMapping("/recipes")
@@ -39,6 +40,6 @@ public class RecipesController {
     @DeleteMapping("/recipe/{id}")
     public ResponseEntity<String> deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);
-       return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

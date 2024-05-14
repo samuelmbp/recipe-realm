@@ -33,4 +33,8 @@ public class RecipesService {
         newRecipe.setId(id);
         recipesRepository.save(newRecipe);
     }
+
+    public void addRecipe(Recipe recipe) {
+        recipesRepository.save(recipe);
+    }
 }
