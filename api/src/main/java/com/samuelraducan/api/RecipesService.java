@@ -22,4 +22,9 @@ public class RecipesService {
 
         return recipe.get();
     }
+
+    public void deleteRecipeById(long id) {
+        if (!recipesRepository.existsById(id)) throw new RecipeNotFoundException();
+        recipesRepository.deleteById(id);
+    }
 }

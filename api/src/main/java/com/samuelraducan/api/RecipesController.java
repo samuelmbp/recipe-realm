@@ -1,10 +1,7 @@
 package com.samuelraducan.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,13 @@ public class RecipesController {
     @GetMapping("/recipe/{id}")
     public Recipe getRecipeById(@PathVariable long id) {
         return recipesService.getRecipeById(id);
+    }
+
+    // UPDATE RECIPE
+
+    @DeleteMapping("/recipe/{id}")
+    public String deleteRecipeById(@PathVariable long id) {
+        recipesService.deleteRecipeById(id);
+        return "Deleted Greeting";
     }
 }
