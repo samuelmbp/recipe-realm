@@ -1,4 +1,49 @@
-.home-title {
-    width: 100%;
-    font-size: 35px;
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+
+    .home-content {
+        margin: 20px 0;
+    }
+
+    .home-title {
+        width: 80%;
+        font-size: 30px;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .home-hero {
+        position: relative;
+        width: 100%;
+
+        .hero-image {
+            width: 100%;
+            height: 65vh;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .home {
+        .home-title {
+            font-size: 55px;
+            padding: 20px 40px;
+        }
+
+        .home-hero {
+            .hero-image {
+                height: 80vh;
+            }
+        }
+    }
 }
