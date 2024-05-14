@@ -28,6 +28,12 @@ public class RecipesController {
     }
 
     // UPDATE RECIPE
+    @PutMapping("/recipe/{id}")
+    public Recipe updateRecipe(@RequestBody Recipe newRecipe, @PathVariable long id ){
+        newRecipe.setId(id);
+        recipesService.updateRecipe(newRecipe, id);
+        return newRecipe;
+    }
 
     @DeleteMapping("/recipe/{id}")
     public String deleteRecipeById(@PathVariable long id) {

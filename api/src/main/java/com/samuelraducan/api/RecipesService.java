@@ -27,4 +27,10 @@ public class RecipesService {
         if (!recipesRepository.existsById(id)) throw new RecipeNotFoundException();
         recipesRepository.deleteById(id);
     }
+
+    public void updateRecipe(Recipe newRecipe, long id) {
+        if (!recipesRepository.existsById(id)) throw new RecipeNotFoundException();
+        newRecipe.setId(id);
+        recipesRepository.save(newRecipe);
+    }
 }
