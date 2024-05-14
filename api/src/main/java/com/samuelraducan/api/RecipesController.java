@@ -1,6 +1,8 @@
 package com.samuelraducan.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,31 +15,30 @@ public class RecipesController {
     private RecipesService recipesService;
 
     @GetMapping("/")
-    public String helloWorld() {
-        return "Hello, world.";
+    public ResponseEntity<String> helloWorld() {
+        return ResponseEntity.status(HttpStatus.OK).body("Hello, world.");
     }
 
     @GetMapping("/recipes")
-    public List<Recipe> getAllRecipes() {
-        return recipesService.getAllRecipes();
+    public ResponseEntity<List<Recipe>> getAllRecipes() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getAllRecipes());
     }
 
     @GetMapping("/recipe/{id}")
-    public Recipe getRecipeById(@PathVariable long id) {
-        return recipesService.getRecipeById(id);
+    public ResponseEntity<Recipe> getRecipeById(@PathVariable long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipeById(id));
     }
 
-    // UPDATE RECIPE
     @PutMapping("/recipe/{id}")
-    public Recipe updateRecipe(@RequestBody Recipe newRecipe, @PathVariable long id ){
+    public ResponseEntity<Recipe> updateRecipe(@RequestBody Recipe newRecipe, @PathVariable long id ){
         newRecipe.setId(id);
         recipesService.updateRecipe(newRecipe, id);
-        return newRecipe;
+        return ResponseEntity.status(HttpStatus.OK).body(newRecipe);
     }
 
     @DeleteMapping("/recipe/{id}")
-    public String deleteRecipeById(@PathVariable long id) {
+    public ResponseEntity<String> deleteRecipeById(@PathVariable long id) {
         recipesService.deleteRecipeById(id);
-        return "Deleted Greeting";
+       return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
