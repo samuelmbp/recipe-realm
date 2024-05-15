@@ -21,7 +21,7 @@ const ViewRecipe = () => {
     }, [id]);
 
     if (!recipe) {
-        // TODO: Style loading
+        // TODO: Style loading (ADD SPINNER)
         return <div>Loading...</div>;
     }
 

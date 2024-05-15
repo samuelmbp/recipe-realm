@@ -12,14 +12,27 @@
     align-items: center;
 
     &__content {
-        margin: 20px 0;
+        margin-bottom: 35px;
     }
 
     &__title {
         font-size: 24px;
-        margin: 0;
-        position: relative;
-        z-index: 1;
         color: $primary-color;
+    }
+
+    &__description {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .brief-recipe {
+        &__title {
+            font-size: 28px;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            color: $primary-color;
+        }
     }
 }

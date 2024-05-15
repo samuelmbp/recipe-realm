@@ -12,7 +12,7 @@ const Nav = () => {
                 Recipes
             </Link>
 
-            <Link className="nav__item" to="/greeting/create">
+            <Link className="nav__item" to="/recipe/create">
                 Add Recipe
             </Link>
         </div>

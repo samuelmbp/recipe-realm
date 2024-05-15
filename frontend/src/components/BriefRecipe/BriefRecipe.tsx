@@ -11,6 +11,7 @@ type BriefRecipeProps = {
 const BriefRecipe = ({ title, description, id }: BriefRecipeProps) => {
     return (
         <div className="brief-recipe">
+            {/* TODO: ADD IMAGE */}
             <div className="brief-recipe__content">
                 <h2 className="brief-recipe__title">{title}</h2>
                 <p className="brief-recipe__description">{description}</p>
