@@ -30,6 +30,11 @@ public class RecipesController {
         return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRecipeById(id));
     }
 
+    @GetMapping("/recipe/random")
+    public ResponseEntity<Recipe> getRandomRecipe() {
+        return ResponseEntity.status(HttpStatus.OK).body(recipesService.getRandomRecipe());
+    }
+
     @PutMapping("/recipe/{id}")
     public ResponseEntity<Recipe> updateRecipe(@RequestBody Recipe newRecipe, @PathVariable long id ){
         newRecipe.setId(id);

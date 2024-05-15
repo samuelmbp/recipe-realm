@@ -23,6 +23,10 @@ public class RecipesService {
         return recipe.get();
     }
 
+    public Recipe getRandomRecipe() {
+        return recipesRepository.getRandomRecipe();
+    }
+
     public void deleteRecipeById(long id) {
         if (!recipesRepository.existsById(id)) throw new RecipeNotFoundException();
         recipesRepository.deleteById(id);
