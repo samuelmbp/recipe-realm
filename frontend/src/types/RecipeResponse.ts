@@ -1,5 +1,5 @@
 type RecipeResponse = {
-    id: number;
+    id: string;
     title: string;
     description: string;
     ingredients: string;

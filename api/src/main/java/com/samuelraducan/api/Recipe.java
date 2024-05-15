@@ -2,8 +2,6 @@ package com.samuelraducan.api;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "recipes")
 public class Recipe {

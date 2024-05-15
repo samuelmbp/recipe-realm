@@ -3,6 +3,7 @@ import "./App.scss";
 import Home from "./containers/Home/Home";
 import ViewRecipes from "./containers/ViewRecipes/ViewRecipes";
 import Nav from "./components/Nav/Nav";
+import ViewRecipe from "./containers/ViewRecipe/ViewRecipe";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/recipes" element={<ViewRecipes />} />
+                <Route path="/recipe/:id" element={<ViewRecipe />} />
             </Routes>
         </BrowserRouter>
     );

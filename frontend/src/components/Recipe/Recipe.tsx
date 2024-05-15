@@ -1,3 +1,5 @@
+// TODO: Style the recipe card!
+
 import RecipeResponse from "../../types/RecipeResponse";
 import "./Recipe.scss";
 

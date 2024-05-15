@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+
+.brief-recipe {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $color-secondary-light;
+    color: $color-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+        margin: 20px 0;
+    }
+
+    &__title {
+        font-size: 24px;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        color: $primary-color;
+    }
+}

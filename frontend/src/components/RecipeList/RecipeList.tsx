@@ -1,5 +1,6 @@
 import RecipeResponse from "../../types/RecipeResponse";
-import Recipe from "../Recipe/Recipe";
+import BriefRecipe from "../BriefRecipe/BriefRecipe";
+// import Recipe from "../Recipe/Recipe";
 import "./RecipeList.scss";
 
 type RecipesListProps = {
@@ -11,7 +12,12 @@ const RecipeList = ({ recipes }: RecipesListProps) => {
         <>
             <div className="recipe-list">
                 {recipes.map((recipe) => (
-                    <Recipe key={recipe.id} recipe={recipe} />
+                    <BriefRecipe
+                        key={recipe.id}
+                        title={recipe.title}
+                        description={recipe.description}
+                        id={recipe.id}
+                    />
                 ))}
             </div>
         </>

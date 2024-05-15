@@ -4,15 +4,15 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: $color-secondary-light; // Background color set to white
-    color: $color-black; // Text color set to black
+    background-color: $color-secondary-light;
+    color: $color-black;
 
     &__title {
         font-size: 32px;
         margin: 0;
         position: relative;
         z-index: 1;
-        color: $primary-color; // Title color set to primary color (deep purple)
+        color: $primary-color;
     }
 
     &__info {
@@ -44,7 +44,7 @@
         h3 {
             font-size: 24px;
             margin-bottom: 10px;
-            color: $primary-color; // Heading color set to primary color (deep purple)
+            color: $primary-color;
         }
 
         ul,
@@ -56,7 +56,7 @@
             li {
                 margin-bottom: 10px;
                 font-size: 16px;
-                color: $color-black; // List item text color set to black
+                color: $color-black;
             }
         }
     }

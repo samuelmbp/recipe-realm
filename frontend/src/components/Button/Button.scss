@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    // text-transform: uppercase;
+    color: $color-white;
+    cursor: pointer;
+    padding: 0.6rem 2rem;
+    background-color: $primary-color;
+}
