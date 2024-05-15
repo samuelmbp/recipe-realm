@@ -37,13 +37,16 @@ const Recipe = ({ recipe }: RecipeProp) => {
 
     const renderInstructions = () => {
         return instructionsArr.map((instruction, index) => (
-            <li key={index}>{instruction.trim()}</li>
+            <li key={index}>
+                {instruction && (
+                    <>
+                        <span className="step-number">{index + 1}.</span>{" "}
+                        {instruction.trim()}
+                    </>
+                )}
+            </li>
         ));
     };
-
-    // TODO: Make description shorter and add a button with "Read More"
-    // Also, when getting details about an individual recipe on a new page can:
-    // - view all the information apart from image, title and description(maybe)
 
     return (
         <div className="recipe">
@@ -88,13 +91,15 @@ const Recipe = ({ recipe }: RecipeProp) => {
                     </p>
                 </div>
             </div>
-            <div className="recipe__ingredients">
-                <h3>Ingredients:</h3>
-                <ul>{renderIngredients()}</ul>
-            </div>
-            <div className="recipe__instructions">
-                <h3>Instructions:</h3>
-                <ol>{renderInstructions()}</ol>
+            <div className="recipe__flex-container">
+                <div className="recipe__ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>{renderIngredients()}</ul>
+                </div>
+                <div className="recipe__instructions">
+                    <h3>Instructions</h3>
+                    <ol>{renderInstructions()}</ol>
+                </div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 
 .recipe {
-    margin: 0 auto;
+    margin: 30px 10px;
     padding: 20px;
     border-radius: 10px;
     background-color: $color-secondary-light;
@@ -56,5 +56,23 @@
                 color: $color-black;
             }
         }
+    }
+
+    .step-number {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: $color-primary-light;
+        color: #fff;
+        text-align: center;
+        margin-right: 12px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .recipe {
+        width: 60%;
+        margin: 40px auto;
     }
 }

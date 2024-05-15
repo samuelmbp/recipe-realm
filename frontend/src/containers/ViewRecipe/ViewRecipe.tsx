@@ -27,6 +27,7 @@ const ViewRecipe = () => {
 
     return (
         <section className="view-recipe">
+            <h2 className="view-recipe__title">Food for the soul</h2>
             <Recipe recipe={recipe} />
         </section>
     );
