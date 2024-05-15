@@ -3,21 +3,34 @@
 .nav {
     width: 100%;
     height: 70px;
-    margin: 10px 0;
+    margin: 10px 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     border-bottom: 2px solid rgba($color: $primary-color, $alpha: 0.3);
     padding-bottom: 10px;
 
     &__item {
+        text-transform: uppercase;
         text-decoration: none;
-        font-size: 18px;
-        margin: 10px 45px;
+        font-size: 16px;
+        margin: 10px 14px;
         color: $color-black;
 
         &:hover {
             // TODO: Add hover
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+
+        &__item {
+            font-size: 18px;
+            margin: 10px 45px;
         }
     }
 }
