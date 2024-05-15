@@ -1,78 +1,99 @@
 @use "../../styles/variables" as *;
 
-.recipe {
-    margin: 30px 10px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: $color-secondary-light;
-    color: $color-black;
+.recipe-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
-    &__title {
-        font-size: 32px;
-        color: $primary-color;
-    }
+    .recipe {
+        margin: 30px 10px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: $color-secondary;
+        color: $color-black;
 
-    &__info {
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    &__description {
-        font-size: 18px;
-        margin-bottom: 20px;
-        flex: 1 1 100%;
-    }
-
-    &__details {
-        flex: 1 1 50%;
-        margin-right: 20px;
-
-        p {
-            margin-bottom: 10px;
-            color: $primary-color;
+        &-image {
+            margin-top: 30px;
+            width: 650px;
+            height: 400px;
+            border-radius: 10px;
+            margin-right: 20px;
+            object-fit: contain;
         }
-    }
 
-    &__ingredients,
-    &__instructions {
-        margin-top: 20px;
-
-        h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
+        &__title {
+            font-size: 32px;
             color: $primary-color;
         }
 
-        ul,
-        ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        &__info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-            li {
+        &__description {
+            font-size: 18px;
+            margin-bottom: 20px;
+            // flex: 1 1 100%;
+        }
+
+        &__details {
+            margin-right: 20px;
+
+            p {
                 margin-bottom: 10px;
-                font-size: 16px;
-                color: $color-black;
+                color: $primary-color;
             }
         }
-    }
 
-    .step-number {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: $color-primary-light;
-        color: #fff;
-        text-align: center;
-        margin-right: 12px;
+        &__ingredients,
+        &__instructions {
+            margin-top: 20px;
+
+            h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: $primary-color;
+            }
+
+            ul,
+            ol {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    color: $color-black;
+                }
+            }
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: $color-primary-light;
+            color: #fff;
+            text-align: center;
+            margin-right: 12px;
+        }
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .recipe {
-        width: 60%;
-        margin: 40px auto;
+    .recipe-section {
+        .recipe {
+            width: 40%;
+            margin: 40px auto;
+
+            &-image {
+                object-fit: cover;
+            }
+        }
     }
 }

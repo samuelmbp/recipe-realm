@@ -17,6 +17,7 @@ const RecipeList = ({ recipes }: RecipesListProps) => {
                         title={recipe.title}
                         description={recipe.description}
                         id={recipe.id}
+                        image={recipe.image}
                     />
                 ))}
             </div>

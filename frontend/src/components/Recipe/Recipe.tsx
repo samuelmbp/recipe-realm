@@ -49,59 +49,70 @@ const Recipe = ({ recipe }: RecipeProp) => {
     };
 
     return (
-        <div className="recipe">
-            <h2 className="recipe__title">{title}</h2>
-            <div className="recipe__info">
-                <p className="recipe__description">{description}</p>
-                <div className="recipe__details">
-                    <p>
-                        <strong>Preparation Time:</strong> {preparationTime}
-                    </p>
-                    <p>
-                        <strong>Cooking Time:</strong> {cookingTime}
-                    </p>
-                    <p>
-                        <strong>Total Time:</strong> {totalTime}
-                    </p>
-                    <p>
-                        <strong>Servings:</strong> {servings}
-                    </p>
-                    <p>
-                        <strong>Difficulty Level:</strong> {difficultyLevel}
-                    </p>
-                    <p>
-                        <strong>Cuisine:</strong> {cuisine}
-                    </p>
-                    <p>
-                        <strong>Meal Type:</strong> {mealType}
-                    </p>
-                    <p>
-                        <strong>Dietary Information:</strong>{" "}
-                        {dietaryInformation}
-                    </p>
-                    <p>
-                        <strong>Calories:</strong> {calories}
-                    </p>
-                    <p>
-                        <strong>Nutritional Information:</strong>{" "}
-                        {nutritionalInformation}
-                    </p>
-                    <p>
-                        <strong>Tags:</strong> {tags}
-                    </p>
+        <>
+            <section className="recipe-section">
+                <div>
+                    <img
+                        className="recipe-image"
+                        src={recipe.image}
+                        alt={recipe.title}
+                    />
                 </div>
-            </div>
-            <div className="recipe__flex-container">
-                <div className="recipe__ingredients">
-                    <h3>Ingredients</h3>
-                    <ul>{renderIngredients()}</ul>
+                <div className="recipe">
+                    <h2 className="recipe__title">{title}</h2>
+                    <div className="recipe__info">
+                        <p className="recipe__description">{description}</p>
+                        <div className="recipe__details">
+                            <p>
+                                <strong>Preparation Time:</strong>{" "}
+                                {preparationTime}
+                            </p>
+                            <p>
+                                <strong>Cooking Time:</strong> {cookingTime}
+                            </p>
+                            <p>
+                                <strong>Total Time:</strong> {totalTime}
+                            </p>
+                            <p>
+                                <strong>Servings:</strong> {servings}
+                            </p>
+                            <p>
+                                <strong>Difficulty Level:</strong>{" "}
+                                {difficultyLevel}
+                            </p>
+                            <p>
+                                <strong>Cuisine:</strong> {cuisine}
+                            </p>
+                            <p>
+                                <strong>Meal Type:</strong> {mealType}
+                            </p>
+                            <p>
+                                <strong>Dietary Information:</strong>{" "}
+                                {dietaryInformation}
+                            </p>
+                            <p>
+                                <strong>Calories:</strong> {calories}
+                            </p>
+                            <p>
+                                <strong>Nutritional Information:</strong>{" "}
+                                {nutritionalInformation}
+                            </p>
+                            <p>
+                                <strong>Tags:</strong> {tags}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="recipe__ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>{renderIngredients()}</ul>
+                    </div>
+                    <div className="recipe__instructions">
+                        <h3>Instructions</h3>
+                        <ol>{renderInstructions()}</ol>
+                    </div>
                 </div>
-                <div className="recipe__instructions">
-                    <h3>Instructions</h3>
-                    <ol>{renderInstructions()}</ol>
-                </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 };
 
