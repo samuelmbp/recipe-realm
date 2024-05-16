@@ -31,6 +31,10 @@
             object-fit: cover;
         }
     }
+
+    &__recipes {
+        margin-top: 45px;
+    }
 }
 
 @media screen and (min-width: 768px) {

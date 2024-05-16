@@ -1,0 +1,24 @@
+.about {
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 50px 10px;
+
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+}
