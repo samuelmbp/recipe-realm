@@ -5,7 +5,10 @@ import "./Nav.scss";
 const Nav = () => {
     return (
         <div className="nav">
-            <img className="nav__logo" src={logo} alt="Recipe Logo Book" />
+            <div className="nav__logo-container">
+                <img className="nav__logo" src={logo} alt="Recipe Logo Book" />
+                <p className="nav__logo-text">Recipe Realm</p>
+            </div>
             <div className="nav__links">
                 <Link className="nav__item" to="/">
                     Home

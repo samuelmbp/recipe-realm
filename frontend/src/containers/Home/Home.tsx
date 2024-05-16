@@ -4,6 +4,7 @@ import RecipeResponse from "../../types/RecipeResponse";
 import "./Home.scss";
 import RecipeList from "../../components/RecipeList/RecipeList";
 import About from "../../components/About/About";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
     const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
@@ -20,7 +21,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="home">
+        <section className="home">
             <div className="home-hero">
                 <img src={heroImage} alt="Hero Image" className="hero-image" />
                 <div className="hero-text">
@@ -32,7 +33,8 @@ const Home = () => {
                 <h2>Explore Some Delicious Recipes</h2>
                 <RecipeList recipes={recipes} />
             </div>
-        </div>
+            <Footer />
+        </section>
     );
 };
 
