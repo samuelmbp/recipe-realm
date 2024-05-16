@@ -21,5 +21,4 @@ function App() {
         </BrowserRouter>
     );
 }
-// TODO: ADD REQUIRED TO THEI NPUT FORM FILEDS
 export default App;
