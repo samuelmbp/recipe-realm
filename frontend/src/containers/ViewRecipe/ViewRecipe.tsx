@@ -3,6 +3,7 @@ import "./ViewRecipe.scss";
 import RecipeResponse from "../../types/RecipeResponse";
 import { useParams } from "react-router-dom";
 import Recipe from "../../components/Recipe/Recipe";
+import Spinner from "../../components/Spinner/Spinner";
 
 const ViewRecipe = () => {
     const { id } = useParams();
@@ -20,10 +21,7 @@ const ViewRecipe = () => {
         }
     }, [id]);
 
-    if (!recipe) {
-        // TODO: Style loading (ADD SPINNER)
-        return <div>Loading...</div>;
-    }
+    if (!recipe) return <Spinner />;
 
     return (
         <section className="view-recipe">

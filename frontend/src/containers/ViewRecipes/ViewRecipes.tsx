@@ -19,7 +19,7 @@ const ViewRecipes = () => {
     return (
         <section className="view-recipes">
             <h2 className="view-recipes__title">
-                Some of the recipes you might like...
+                Unlock Your Inner Chef With Delicious Recipes
             </h2>
             <RecipeList recipes={recipes} />
         </section>

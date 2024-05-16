@@ -3,6 +3,7 @@ import "./EditRecipe.scss";
 import { useEffect, useState } from "react";
 import RecipeResponse from "../../types/RecipeResponse";
 import Form from "../../components/Form/Form";
+import Spinner from "../../components/Spinner/Spinner";
 
 const EditRecipe = () => {
     const { id } = useParams();
@@ -41,7 +42,7 @@ const EditRecipe = () => {
         }
     };
 
-    if (!recipe) return <div>Loading...</div>;
+    if (!recipe) return <Spinner />;
 
     return (
         <section className="edit-recipe">
