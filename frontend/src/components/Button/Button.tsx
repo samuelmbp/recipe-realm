@@ -2,19 +2,13 @@ import "./Button.scss";
 
 export type ButtonProps = {
     label: string;
-    variant?: "primary" | "secondary" | "light-grey" | "light-grey-lighter";
-    size?: "large" | "medium" | "small";
+    variant?: "primary" | "secondary" | "danger";
+    onClick?: () => void;
 };
 
-const Button = ({
-    label,
-    variant = "primary",
-    size = "large",
-}: ButtonProps) => {
+const Button = ({ label, variant = "primary", onClick }: ButtonProps) => {
     return (
-        <button
-            className={`button button--${variant} && button button--${size}`}
-        >
+        <button className={`button button--${variant}`} onClick={onClick}>
             {label}
         </button>
     );

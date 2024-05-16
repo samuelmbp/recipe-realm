@@ -31,6 +31,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     type="text"
                     id="title"
                     value={recipe.title}
+                    required
                     onInput={(event) => handleInput(event, "title")}
                 />
 
@@ -40,6 +41,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     type="text"
                     id="description"
                     value={recipe.description}
+                    required
                     onInput={(event) => handleInput(event, "description")}
                 />
 
@@ -48,6 +50,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="ingredients"
+                    required
                     placeholder="Enter comma (,) separated ingredients. E.g.: eggs, 200g rice, sesame oil"
                     value={recipe.ingredients}
                     onInput={(event) => handleInput(event, "ingredients")}
@@ -58,6 +61,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="instructions"
+                    required
                     value={recipe.instructions}
                     onInput={(event) => handleInput(event, "instructions")}
                 />
@@ -67,6 +71,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="preparationTime"
+                    required
                     value={recipe.preparationTime}
                     onInput={(event) => handleInput(event, "preparationTime")}
                 />
@@ -85,6 +90,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="totalTime"
+                    required
                     value={recipe.totalTime}
                     onInput={(event) => handleInput(event, "totalTime")}
                 />
@@ -94,6 +100,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="number"
                     id="servings"
+                    required
                     value={recipe.servings}
                     onInput={(event) => handleInput(event, "servings")}
                 />
@@ -103,6 +110,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="difficultyLevel"
+                    required
                     placeholder="E.g: Easy | Medium | Intermediate"
                     value={recipe.difficultyLevel}
                     onInput={(event) => handleInput(event, "difficultyLevel")}
@@ -113,6 +121,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="cuisine"
+                    required
                     placeholder="E.g.: Asian"
                     value={recipe.cuisine}
                     onInput={(event) => handleInput(event, "cuisine")}
@@ -123,6 +132,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="mealType"
+                    required
                     placeholder="E.g.: Lunch/Dinner"
                     value={recipe.mealType}
                     onInput={(event) => handleInput(event, "mealType")}
@@ -135,6 +145,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     id="dietaryInformation"
                     placeholder="E.g.: Vegetarian | Contains Meat"
                     value={recipe.dietaryInformation}
+                    required
                     onInput={(event) =>
                         handleInput(event, "dietaryInformation")
                     }
@@ -145,6 +156,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="number"
                     id="calories"
+                    required
                     value={recipe.calories}
                     onInput={(event) => handleInput(event, "calories")}
                 />
@@ -158,6 +170,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     id="nutritionalInformation"
                     placeholder="E.g.: protein: 25g, carbohydrates: 45g, fat: 20g, fiber: 5g"
                     value={recipe.nutritionalInformation}
+                    required
                     onInput={(event) =>
                         handleInput(event, "nutritionalInformation")
                     }
@@ -179,6 +192,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     type="text"
                     placeholder="E.g., High Protein, Low Carbs, Healthy"
                     id="tags"
+                    required
                     value={recipe.tags}
                     onInput={(event) => handleInput(event, "tags")}
                 />
@@ -188,6 +202,7 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
                     className="form-container__input"
                     type="text"
                     id="image"
+                    required
                     placeholder="Paste Image URL Here..."
                     value={recipe.image}
                     onInput={(event) => handleInput(event, "image")}

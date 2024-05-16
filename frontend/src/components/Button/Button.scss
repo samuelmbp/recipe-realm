@@ -10,4 +10,8 @@
     cursor: pointer;
     padding: 0.6rem 2rem;
     background-color: $color-primary-light;
+
+    &--danger {
+        background-color: #b51b75;
+    }
 }

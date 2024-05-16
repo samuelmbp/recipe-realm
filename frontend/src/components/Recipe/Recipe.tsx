@@ -1,6 +1,8 @@
 // TODO: Style the recipe card!
 
+import { Link, useNavigate, useParams } from "react-router-dom";
 import RecipeResponse from "../../types/RecipeResponse";
+import Button from "../Button/Button";
 import "./Recipe.scss";
 
 type RecipeProp = {
@@ -8,6 +10,8 @@ type RecipeProp = {
 };
 
 const Recipe = ({ recipe }: RecipeProp) => {
+    const navigate = useNavigate();
+    const { id } = useParams();
     const {
         title,
         description,
@@ -26,12 +30,28 @@ const Recipe = ({ recipe }: RecipeProp) => {
         tags,
     } = recipe;
 
+    const handleDeleteRecipe = async () => {
+        const result = await fetch(`http://localhost:8081/recipe/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (result.ok) {
+            alert("Recipe Deleted");
+            navigate("/");
+        } else {
+            const message = result.text();
+            alert(message);
+        }
+    };
+
     const ingredientsArr = ingredients.split(", ");
     const instructionsArr = instructions.split(".");
 
     const renderIngredients = () => {
         return ingredientsArr.map((ingredient, index) => (
-            // TODO: ADD BULLET POINTS?
             <li key={index}>{ingredient.trim()}</li>
         ));
     };
@@ -110,6 +130,19 @@ const Recipe = ({ recipe }: RecipeProp) => {
                     <div className="recipe__instructions">
                         <h3>Instructions</h3>
                         <ol>{renderInstructions()}</ol>
+                    </div>
+                    <div className="recipe__buttons">
+                        <Link
+                            to={`/recipe/edit/${recipe.id}`}
+                            style={{ width: "100%" }}
+                        >
+                            <Button label="Update Recipe" />
+                        </Link>
+                        <Button
+                            label="Delete Recipe"
+                            variant="danger"
+                            onClick={handleDeleteRecipe}
+                        />
                     </div>
                 </div>
             </section>

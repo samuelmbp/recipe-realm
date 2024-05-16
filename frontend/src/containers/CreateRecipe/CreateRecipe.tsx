@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import RecipeResponse from "../../types/RecipeResponse";
 import "./CreateRecipe.scss";
 
 const CreateRecipe = () => {
+    const navigate = useNavigate();
     const handleSubmit = async (recipe: RecipeResponse) => {
         const result = await fetch("http://localhost:8081/recipe", {
             method: "POST",
@@ -14,6 +16,7 @@ const CreateRecipe = () => {
 
         if (result.ok) {
             alert("Recipe Added");
+            navigate("/recipes");
         } else {
             const message = await result.text();
             alert(message);
