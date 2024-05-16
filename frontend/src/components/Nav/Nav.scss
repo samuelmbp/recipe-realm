@@ -33,6 +33,10 @@
             border-bottom: 3px solid $color-primary-light;
         }
     }
+
+    &__item-random {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -63,6 +67,14 @@
         &__item {
             font-size: 18px;
             margin: 10px 45px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav {
+        &__item-random {
+            display: inline-block;
         }
     }
 }

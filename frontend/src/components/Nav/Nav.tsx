@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/recipe-logo.png";
 import "./Nav.scss";
+import Button from "../Button/Button";
 
 const Nav = () => {
     return (
@@ -20,6 +21,12 @@ const Nav = () => {
 
                 <Link className="nav__item" to="/recipe/create">
                     Add Recipe
+                </Link>
+                <Link
+                    to={`/recipe/random`}
+                    className="nav__item-random nav__item"
+                >
+                    <Button label="Fancy a random recipe" />
                 </Link>
             </div>
         </div>
