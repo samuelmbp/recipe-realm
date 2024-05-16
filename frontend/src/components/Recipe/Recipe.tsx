@@ -31,6 +31,7 @@ const Recipe = ({ recipe }: RecipeProp) => {
 
     const renderIngredients = () => {
         return ingredientsArr.map((ingredient, index) => (
+            // TODO: ADD BULLET POINTS?
             <li key={index}>{ingredient.trim()}</li>
         ));
     };
