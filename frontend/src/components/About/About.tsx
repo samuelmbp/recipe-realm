@@ -4,7 +4,7 @@ const About = () => {
     return (
         <section className="about">
             <div className="about__content">
-                <h2 className="about__title">Welcome to Recipe Realm!</h2>
+                <h2 className="about__title">About Recipe Realm.</h2>
                 <p className="about__text">
                     At Recipe Realm, we're passionate about bringing you the
                     most delicious and mouthwatering recipes from around the

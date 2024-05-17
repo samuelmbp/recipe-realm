@@ -1,6 +1,7 @@
 @use "../../styles/variables" as *;
 
 .brief-recipe {
+    max-width: 450px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;

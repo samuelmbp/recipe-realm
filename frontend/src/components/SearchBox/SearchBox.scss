@@ -1,0 +1,35 @@
+@use "../../styles/variables" as *;
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 3.125rem;
+
+    .search-box__label {
+        font-size: 1.25rem;
+    }
+
+    .search-box__input {
+        margin: 1.25rem 0;
+        padding: 0.625rem;
+        font-size: 1.125rem;
+        border: 3px $color-primary-light solid;
+        border-radius: 1rem;
+        color: $color-black;
+
+        &:focus {
+            border: 3px $primary-color solid;
+            outline: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .search-box {
+        .search-box__input {
+            width: calc((100% / 3) - 3.125rem);
+        }
+    }
+}
