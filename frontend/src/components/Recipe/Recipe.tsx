@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import RecipeResponse from "../../types/RecipeResponse";
 import Button from "../Button/Button";
 import "./Recipe.scss";
+import { useState } from "react";
 
 type RecipeProp = {
     recipe: RecipeResponse;
@@ -29,6 +30,9 @@ const Recipe = ({ recipe }: RecipeProp) => {
         nutritionalInformation,
         tags,
     } = recipe;
+    const [checkedInstructions, setCheckedInstructions] = useState<boolean[]>(
+        new Array(instructions.length).fill(false)
+    );
 
     const handleDeleteRecipe = async () => {
         const result = await fetch(`http://localhost:8081/recipe/${id}`, {
@@ -50,9 +54,17 @@ const Recipe = ({ recipe }: RecipeProp) => {
     const ingredientsArr = ingredients.split(", ");
     const instructionsArr = instructions.split(".");
 
+    const handleCheckboxChange = (index: number) => {
+        const newCheckedInstructions = [...checkedInstructions];
+        newCheckedInstructions[index] = !newCheckedInstructions[index];
+        setCheckedInstructions(newCheckedInstructions);
+    };
+
     const renderIngredients = () => {
         return ingredientsArr.map((ingredient, index) => (
-            <li key={index}>{ingredient.trim()}</li>
+            <li className="ingredient" key={index}>
+                {ingredient.trim()}
+            </li>
         ));
     };
 
@@ -60,10 +72,20 @@ const Recipe = ({ recipe }: RecipeProp) => {
         return instructionsArr.map((instruction, index) => (
             <li key={index}>
                 {instruction && (
-                    <>
-                        <span className="step-number">{index + 1}.</span>{" "}
-                        {instruction.trim()}
-                    </>
+                    <div className="instruction">
+                        <input
+                            type="checkbox"
+                            checked={checkedInstructions[index]}
+                            onChange={() => handleCheckboxChange(index)}
+                        />
+                        <p
+                            className={`instruction__text ${
+                                checkedInstructions[index] ? "checked" : ""
+                            }`}
+                        >
+                            {instruction.trim()}
+                        </p>
+                    </div>
                 )}
             </li>
         ));
