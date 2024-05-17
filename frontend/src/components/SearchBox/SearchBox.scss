@@ -8,7 +8,8 @@
     padding: 0 3.125rem;
 
     .search-box__label {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        text-align: center;
     }
 
     .search-box__input {
@@ -26,8 +27,11 @@
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1028px) {
     .search-box {
+        .search-box__label {
+            font-size: 1.25rem;
+        }
         .search-box__input {
             width: calc((100% / 3) - 3.125rem);
         }

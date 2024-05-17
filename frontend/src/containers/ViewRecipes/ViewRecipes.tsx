@@ -14,7 +14,7 @@ const ViewRecipes = () => {
         const filteredRecipes = recipeData.filter((recipe) => {
             return recipe.title.toLowerCase().includes(searchRecipe);
         });
-        setRecipes(filteredRecipes);
+        setRecipes(filteredRecipes.reverse());
     };
 
     useEffect(() => {
