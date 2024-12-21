@@ -14,7 +14,6 @@ const Form = ({ defaultFormState, formTitle, handleSubmit }: FormProps) => {
     const handleValidation = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         handleSubmit(recipe);
-        // TODO: EMPTY FIELDS AFTER SUBMISSION
     };
 
     const handleInput = (event: FormEvent<HTMLInputElement>, key: string) => {

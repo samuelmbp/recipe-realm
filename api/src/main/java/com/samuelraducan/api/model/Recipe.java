@@ -1,4 +1,4 @@
-package com.samuelraducan.api;
+package com.samuelraducan.api.model;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,11 @@
-package com.samuelraducan.api;
+package com.samuelraducan.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.samuelraducan.api.RecipeNotFoundException;
+import com.samuelraducan.api.model.Recipe;
+import com.samuelraducan.api.repository.RecipesRepository;
 
 import java.util.List;
 import java.util.Optional;

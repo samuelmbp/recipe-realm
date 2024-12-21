@@ -1,7 +1,9 @@
-package com.samuelraducan.api;
+package com.samuelraducan.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.samuelraducan.api.model.Recipe;
 
 public interface RecipesRepository extends JpaRepository<Recipe, Long> {
 

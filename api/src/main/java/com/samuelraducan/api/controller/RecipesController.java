@@ -1,9 +1,12 @@
-package com.samuelraducan.api;
+package com.samuelraducan.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.samuelraducan.api.model.Recipe;
+import com.samuelraducan.api.service.RecipesService;
 
 import java.util.List;
 
